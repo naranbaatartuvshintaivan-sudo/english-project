@@ -1,5 +1,6 @@
 'use client'
 import { Fragment, useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import WobbleText from './WobbleText'
 
@@ -57,12 +58,15 @@ export default function Nav() {
         {/* Logo */}
         <button
           onClick={() => scrollTo('#hero')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center cursor-pointer"
         >
-          <div className="w-2 h-2 rounded-full bg-ink" />
-          <WobbleText
-            text="Student Ebook"
-            className="font-mclaren text-xl text-ink"
+          <Image
+            src="/logo.png"
+            alt="Student Ebook"
+            width={160}
+            height={40}
+            priority
+            className="h-10 w-auto"
           />
         </button>
 
